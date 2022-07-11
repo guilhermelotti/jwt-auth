@@ -13,22 +13,21 @@ export const InputWrapper = styled.div`
     margin-top: 0.5rem;
     background: ${theme.colors.white};
     border-radius: ${theme.radii};
-    padding: 0 ${theme.spacings.xsmall};
-    border: 0.2rem solid ${theme.colors.gray};
-    border-color: ${theme.colors.lightGray};
+    padding: 0.4rem ${theme.spacings.xsmall};
+    border: 0.1rem solid ${theme.colors.lightGray};
     transition: all 0.3s ease-in-out;
 
     &:focus-within {
-      border: 0.2rem solid ${theme.colors.primary};
+      border: 0.1rem solid ${theme.colors.primary};
     }
   `}
 `;
 
 export const Input = styled.input<IconPositionProps>`
   ${({ theme, iconPosition }) => css`
-    color: ${theme.colors.black};
+    color: ${theme.colors.lightBlack};
     font-family: ${theme.font.family};
-    font-size: ${theme.font.sizes.xsmall};
+    font-size: ${theme.font.sizes.small};
     padding: ${theme.spacings.xxsmall} 0;
     padding-${iconPosition}: ${theme.spacings.xsmall};
     background: transparent;
@@ -49,18 +48,18 @@ export const Input = styled.input<IconPositionProps>`
 
 export const Label = styled.label`
   ${({ theme }) => css`
-    font-size: ${theme.font.sizes.xsmall};
-    color: ${theme.colors.gray};
+    font-size: ${theme.font.sizes.small};
+    color: ${theme.colors.lightBlack};
     cursor: pointer;
     font-family: ${theme.font.family};
-    font-weight: bold;
+    font-weight: 500;
   `}
 `;
 
 export const Icon = styled.div<IconPositionProps>`
   ${({ theme, iconPosition }) => css`
     display: flex;
-    color: ${theme.colors.lightGray};
+    color: ${theme.colors.gray};
     order: ${iconPosition === "right" ? 1 : 0};
     & > svg {
       width: 2.2rem;

@@ -20,7 +20,7 @@ export const theme = {
     black: "#030517",
     lightBlack: "#333c44",
     white: "#FFF",
-    lightGray: "#EAEAEA",
+    lightGray: "#d1d5db",
     gray: "#8F8F8F",
     red: "#FF6347",
   },
@@ -33,8 +33,9 @@ export const theme = {
     xlarge: "4.8rem",
     xxlarge: "5.6rem",
   },
-  radii: "3px",
+  radii: "5px",
   layers: {
     alwaysOnTop: 90,
   },
+  boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
 } as const;

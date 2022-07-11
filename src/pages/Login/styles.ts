@@ -10,8 +10,10 @@ export const Container = styled.div`
 
 export const FormContainer = styled.div`
   background-color: white;
-  padding: 3rem;
-  border-radius: ${({ theme }) => theme.radii};
+  padding: 4rem;
+  border-radius: 8px;
+  min-width: 25%;
+  box-shadow: ${({ theme }) => theme.boxShadow};
 `;
 
 export const HeadingContainer = styled.div`
@@ -34,9 +36,9 @@ export const Form = styled.form``;
 export const FieldGroup = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
 `;
 
 export const FormFooter = styled.div`
-  margin-top: 1.5rem;
+  margin-top: 3rem;
 `;
