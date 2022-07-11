@@ -18,7 +18,11 @@ export const theme = {
     secondary: "blue",
     mainBg: "#f6f6f6",
     black: "#030517",
+    lightBlack: "#333c44",
     white: "#FFF",
+    lightGray: "#EAEAEA",
+    gray: "#8F8F8F",
+    red: "#FF6347",
   },
   spacings: {
     xxsmall: "0.8rem",
@@ -29,7 +33,7 @@ export const theme = {
     xlarge: "4.8rem",
     xxlarge: "5.6rem",
   },
-  radii: "7px",
+  radii: "3px",
   layers: {
     alwaysOnTop: 90,
   },

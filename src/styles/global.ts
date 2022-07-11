@@ -22,6 +22,10 @@ const GlobalStyles = createGlobalStyle`
     button {
       font-family: ${theme.font.family};
     }
+
+    body {
+      background-color: ${theme.colors.mainBg};
+    }
   `}
 `;
 
