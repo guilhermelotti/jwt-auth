@@ -1,18 +1,22 @@
-import { useState, InputHTMLAttributes } from "react";
+import { InputHTMLAttributes } from "react";
+import { FieldError, UseFormRegister } from "react-hook-form";
 
 import * as S from "./styles";
 
 export type TextFieldProps = {
+  register: UseFormRegister<any>;
   onInputChange?: (value: string) => void;
   label?: string;
   initialValue?: string;
   icon?: React.ReactNode;
   iconPosition?: "left" | "right";
   disabled?: boolean;
-  error?: string;
+  error?: FieldError | undefined;
+  name: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 export function TextField({
+  register,
   icon,
   iconPosition = "left",
   label,
@@ -23,15 +27,6 @@ export function TextField({
   onInputChange,
   ...props
 }: TextFieldProps) {
-  const [value, setValue] = useState(initialValue);
-
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = e.currentTarget.value;
-    setValue(newValue);
-
-    !!onInputChange && onInputChange(newValue);
-  };
-
   return (
     <S.Wrapper disabled={disabled} error={!!error}>
       {!!label && <S.Label htmlFor={name}>{label}</S.Label>}
@@ -39,16 +34,14 @@ export function TextField({
         {!!icon && <S.Icon iconPosition={iconPosition}>{icon}</S.Icon>}
         <S.Input
           type="text"
-          onChange={onChange}
-          value={value}
           iconPosition={iconPosition}
           disabled={disabled}
-          name={name}
+          {...register(name)}
           {...(label ? { id: name } : {})}
           {...props}
         />
       </S.InputWrapper>
-      {!!error && <S.Error>{error}</S.Error>}
+      {!!error && <S.Error>{error.message}</S.Error>}
     </S.Wrapper>
   );
 }
